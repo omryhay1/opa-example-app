@@ -6,16 +6,12 @@ import input.tfplan as tfplan
 
 # Allowed sizes by provider
 allowed_types = {
-    "aws": ["t2.nano", "t2.micro"],
-    "azurerm": ["Standard_A0", "Standard_A1"],
-    "google": ["n1-standard-1", "n1-standard-2"]
+    "aws": ["t2.micro", "t2.medium"],
 }
 
 # Attribute name for instance type/size by provider
 instance_type_key = {
     "aws": "instance_type",
-    "azurerm": "vm_size",
-    "google": "machine_type"
 }
 
 array_contains(arr, elem) {
