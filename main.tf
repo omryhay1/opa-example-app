@@ -32,7 +32,7 @@ resource "aws_subnet" "default" {
 
 # A security group for the ELB so it is accessible via the web
 resource "aws_security_group" "elb" {
-  name        = "opa_example_elb"
+  name        = "opa-example-elb"
   description = "Used in the terraform"
   vpc_id      = aws_vpc.default.id
 
@@ -56,7 +56,7 @@ resource "aws_security_group" "elb" {
 # Our default security group to access
 # the instances over SSH and HTTP
 resource "aws_security_group" "default" {
-  name        = "opa_example_sg"
+  name        = "opa-example-sg"
   description = "Used in the terraform"
   vpc_id      = aws_vpc.default.id
 
@@ -86,7 +86,7 @@ resource "aws_security_group" "default" {
 }
 
 resource "aws_elb" "web" {
-  name = "opa_example-elb"
+  name = "opa-example-elb"
 
   subnets         = [aws_subnet.default.id]
   security_groups = [aws_security_group.elb.id]
