@@ -9,5 +9,5 @@ deploy:
     terraformPlan:
       after:
         - terraform show -json .tf-plan > tf-plan.json
-#        - ./opa test --fail-defined "data.terraform" --input tf-plan.json --data ./instance_types.rego --data ./instance_types_test.rego --format pretty
-        - opa test . -v
+#        - ./opa eval --fail-defined "data.terraform" --input tf-plan.json --data ./instance_types.rego --data ./instance_types_test.rego --format pretty
+        - ./opa test . -v
