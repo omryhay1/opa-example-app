@@ -9,4 +9,4 @@ deploy:
     terraformPlan:
       after:
         - terraform show -json .tf-plan > tf-plan.json
-        - ./opa eval --fail-defined "data.terraform.validation.violations[msg]" --input tf-plan.json --data ./instance_types.rego --data ./instance_types_test.rego --format values 1>&2
+        - ./opa eval --fail-defined "data.terraform [msg]" --input tf-plan.json --data ./instance_types.rego --data ./instance_types_test.rego --format Pretty
